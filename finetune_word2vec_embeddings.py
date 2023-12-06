@@ -3,51 +3,46 @@ from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 import gensim.downloader as api
 import pandas as pd
-from nltk.tokenize import RegexpTokenizer
+from keras.preprocessing.text import Tokenizer
 from gensim.scripts.glove2word2vec import glove2word2vec
 import numpy as np
-import regex as re
-# from keras.preprocessing.text import Tokenizer
-# from keras.preprocessing.sequence import pad_sequences
-# from keras.utils import to_categorical
-# from keras.models import Sequential
-# from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
-# from keras.callbacks import EarlyStopping
-
-# Text preprocessing function
-def preprocess(text):
-    text = re.sub(r'[^a-zA-Z0-9\s]', '', text, re.I|re.A)  # Remove non-alphanumeric characters
-    text = re.sub(r'\d+', '', text)  # Remove numbers
-    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)  # Remove single characters
-    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)  # Remove single characters from the start
-    text = re.sub(r'\s+', ' ', text, flags=re.I)  # Substitute multiple spaces with single space
-    text = re.sub(r'^b\s+', '', text)  # Remove prefixed 'b'
-    text = text.lower()  # Convert to lowercase
-    return text
-
+from embedding_utils import preprocess
 
 # Get notes from csv
 patient_notes = pd.read_csv("MIMIC_III_train.csv")
 print(len(patient_notes))
 
-# Return "TEXT" column as a list
-sentences = patient_notes.TEXT.astype('str').tolist()
-print(sentences[0])
-
-
-# Applying text preprocessing to the data
-# patient_notes['TEXT'] = patient_notes['TEXT'].apply(preprocess)
-# sentences = patient_notes['TEXT'].astype('str').tolist()
+# Preprocess text
+patient_notes['TEXT'] = patient_notes['TEXT'].apply(preprocess)
 
 # Tokenize
-# MAX_NB_WORDS = 50000
-# tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~', lower=True)
-tokenizer = RegexpTokenizer(r'\w+')
-sentences_tokenized = [w.lower() for w in sentences]
-sentences_tokenized = [tokenizer.tokenize(i) for i in sentences_tokenized]
+MAX_NB_WORDS = 50000
 
+tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~', lower=True)
+tokenizer.fit_on_texts(patient_notes['TEXT'].values)
+word_index = tokenizer.word_index
+sequences = tokenizer.texts_to_sequences(patient_notes['TEXT'].values)
+
+print('Found %s unique tokens.' % len(word_index))
+
+# Generate list of sentences
+# sentences_tokenized = patient_notes['TEXT'].astype('str').tolist()
+# sentences_tokenized = [s.split() for s in sentences_tokenized]
+# print(sentences_tokenized[0])
+
+
+# Creating a reverse dictionary
+reverse_word_map = dict(map(reversed, tokenizer.word_index.items()))
+
+# Function takes a tokenized sentence and returns the words
+def sequence_to_text(list_of_indices):
+    # Looking up words in dictionary
+    words = [reverse_word_map.get(letter) for letter in list_of_indices]
+    return(words)
+
+# Creating texts 
+sentences_tokenized = list(map(sequence_to_text, sequences))
 print(sentences_tokenized[0])
-
 
 # Load MIMIC-III embeddings for size 300 embeddings
 mimic_iii_embeddings = Word2Vec(vector_size=300, min_count=1)

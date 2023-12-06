@@ -1,6 +1,25 @@
 import numpy as np
+import regex as re
 import gensim.downloader as api
 from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
+from keras.callbacks import EarlyStopping
+
+# Text preprocessing function
+def preprocess(text):
+    text = re.sub(r'[^a-zA-Z0-9\s]', '', text, re.I|re.A)  # Remove non-alphanumeric characters
+    text = re.sub(r'\d+', '', text)  # Remove numbers
+    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)  # Remove single characters
+    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)  # Remove single characters from the start
+    text = re.sub(r'\s+', ' ', text, flags=re.I)  # Substitute multiple spaces with single space
+    text = re.sub(r'^b\s+', '', text)  # Remove prefixed 'b'
+    text = text.lower()  # Convert to lowercase
+    return text
+
 
 # Download word2vec Google news model for 300-dimensional embeddings
 # 3,000,000 vectors, ~100 billion words
@@ -87,8 +106,8 @@ def load_glove_embedding_from_file(filename):
 def get_weight_matrix(embedding, vocab):
     # total vocabulary size plus 0 for unknown words
     vocab_size = len(vocab) + 1
-    # define weight matrix dimensions with all 0 for 200 size embeddings
-    weight_matrix = np.zeros((vocab_size, 200))
+    # define weight matrix dimensions with all 0 for 300 size embeddings
+    weight_matrix = np.zeros((vocab_size, 300))
     # step vocab, store vectors using the Tokenizer's integer mapping
     for word, i in vocab.items():
         weight_matrix[i] = embedding.get(word)
@@ -96,12 +115,11 @@ def get_weight_matrix(embedding, vocab):
     
 
 
-# load embedding from file
+# # load embedding from file
+# raw_embedding = load_word2vec_embedding('embedding_word2vec.txt')
 
-raw_embedding = load_word2vec_embedding('embedding_word2vec.txt')
-
-# get vectors in the right order
+# # get vectors in the right order
 # embedding_vectors = get_weight_matrix(raw_embedding, tokenizer.word_index)
 
-# create the embedding layer
+# # create the embedding layer
 # embedding_layer = Embedding(vocab_size, 100, weights=[embedding_vectors], input_length=max_length, trainable=False)
