@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>classification_glove</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7480,7 +7480,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Importing necessary libraries</span>
@@ -7505,14 +7505,14 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>2023-12-03 13:50:53.940252: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2023-12-03 13:50:54.259233: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2023-12-03 13:50:54.259327: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2023-12-03 13:50:54.273388: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2023-12-03 13:50:54.332193: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2023-12-03 13:50:54.335814: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<pre>2023-12-03 17:57:47.944388: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-03 17:57:48.799491: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-03 17:57:48.799699: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-03 17:57:48.984082: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-03 17:57:49.280348: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-12-03 17:57:49.284753: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-12-03 13:51:00.897851: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-12-03 17:57:53.366090: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre>
 </div>
 </div>
@@ -7523,7 +7523,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Loading data</span>
@@ -7544,7 +7544,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Selecting relevant columns</span>
@@ -7561,7 +7561,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Text preprocessing function</span>
@@ -7584,7 +7584,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Applying text preprocessing to the data</span>
@@ -7601,7 +7601,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Tokenizing and padding sequences</span>
@@ -7637,7 +7637,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Pad sequences for train, test, and validation</span>
@@ -7654,7 +7654,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># For any diagnosis in test and validate not in train, replace with 'Other'</span>
@@ -7731,7 +7731,7 @@ Diagnosis: UPPER GI BLEED Column: 36
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print the shape of the data</span>
@@ -7780,7 +7780,7 @@ Shape of validation label tensor: (15000, 37)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print proportions of each class</span>
@@ -7844,21 +7844,54 @@ UPPER GI BLEED 0.0031
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load embeddings from 'glove_model_fine_tuned.zip-20231203T215611Z-001.zip</span>
-<span class="c1"># open zip to txt</span>
-<span class="kn">import</span> <span class="nn">zipfile</span>
-<span class="n">zip_file</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s1">'glove_model_fine_tuned.zip-20231203T215611Z-001.zip'</span><span class="p">)</span>
-<span class="n">zip_file</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
-<span class="n">zip_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load embeddings from 'glove_model_fine_tuned.txt'</span>
+<span class="n">embeddings_index</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'glove_model_fine_tuned.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf8"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float32'</span><span class="p">)</span>
+        <span class="n">embeddings_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">coefs</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Found </span><span class="si">%s</span><span class="s1"> word vectors.'</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings_index</span><span class="p">))</span>
+
+<span class="c1"># Create embedding matrix</span>
+<span class="n">num_words</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">MAX_NB_WORDS</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_index</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">embedding_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_words</span><span class="p">,</span> <span class="n">EMBEDDING_DIM</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">word_index</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">MAX_NB_WORDS</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">embedding_vector</span> <span class="o">=</span> <span class="n">embeddings_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+        <span class="n">embedding_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">embedding_vector</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Found 58357 word vectors.
+</pre>
 </div>
 </div>
 </div>
@@ -7868,12 +7901,12 @@ UPPER GI BLEED 0.0031
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create the model</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create the model using embedding matrix</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">MAX_NB_WORDS</span><span class="p">,</span> <span class="n">EMBEDDING_DIM</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">num_words</span><span class="p">,</span> <span class="n">EMBEDDING_DIM</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="n">embedding_matrix</span><span class="p">],</span> <span class="n">trainable</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpatialDropout1D</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">recurrent_dropout</span><span class="o">=</span><span class="mf">0.2</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'softmax'</span><span class="p">))</span>
@@ -7890,9 +7923,9 @@ UPPER GI BLEED 0.0031
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>2023-12-03 13:55:28.668464: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:02:00.0/numa_node
+<pre>2023-12-03 18:02:45.155438: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:02:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2023-12-03 13:55:28.714341: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+2023-12-03 18:02:45.359427: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
 Skipping registering GPU devices...
 </pre>
 </div>
@@ -7904,7 +7937,7 @@ Skipping registering GPU devices...
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -7933,7 +7966,7 @@ bool
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Training the model</span>
@@ -7960,13 +7993,13 @@ bool
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Epoch 1/5
-469/469 [==============================] - 553s 1s/step - loss: 1.4072 - accuracy: 0.6929 - val_loss: 1.2555 - val_accuracy: 0.7526
+469/469 [==============================] - 433s 906ms/step - loss: 1.3989 - accuracy: 0.6976 - val_loss: 1.2462 - val_accuracy: 0.7571
 Epoch 2/5
-469/469 [==============================] - 524s 1s/step - loss: 1.1583 - accuracy: 0.7613 - val_loss: 1.2654 - val_accuracy: 0.7557
+469/469 [==============================] - 501s 1s/step - loss: 1.1612 - accuracy: 0.7630 - val_loss: 1.2689 - val_accuracy: 0.7470
 Epoch 3/5
-469/469 [==============================] - 749s 2s/step - loss: 1.0829 - accuracy: 0.7649 - val_loss: 1.2999 - val_accuracy: 0.7571
+469/469 [==============================] - 483s 1s/step - loss: 1.0945 - accuracy: 0.7651 - val_loss: 1.2844 - val_accuracy: 0.7588
 Epoch 4/5
-469/469 [==============================] - 803s 2s/step - loss: 0.9691 - accuracy: 0.7778 - val_loss: 1.3325 - val_accuracy: 0.7403
+469/469 [==============================] - 507s 1s/step - loss: 1.1121 - accuracy: 0.7538 - val_loss: 1.3311 - val_accuracy: 0.7513
 </pre>
 </div>
 </div>
@@ -7977,7 +8010,7 @@ Epoch 4/5
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Evaluate model on test set</span>
@@ -7995,10 +8028,10 @@ Epoch 4/5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>313/313 [==============================] - 42s 135ms/step - loss: 1.3417 - accuracy: 0.7433
+<pre>313/313 [==============================] - 33s 105ms/step - loss: 1.3183 - accuracy: 0.7559
 Test set
-  Loss: 1.342
-  Accuracy: 0.743
+  Loss: 1.318
+  Accuracy: 0.756
 </pre>
 </div>
 </div>
@@ -8009,7 +8042,7 @@ Test set
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Predictions on test set</span>
@@ -8030,7 +8063,7 @@ Test set
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>313/313 [==============================] - 43s 135ms/step
+<pre>313/313 [==============================] - 46s 146ms/step
 </pre>
 </div>
 </div>
@@ -8041,7 +8074,7 @@ Test set
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># For each dianosis, calculate the accuracy, precision, recall, and F1 score; catch divide by zero</span>
@@ -8216,16 +8249,16 @@ Recall: N/A
 F1 Score: N/A
 
 NEWBORN
-Accuracy: 0.9944
-Precision: 0.9963472885642034
-Recall: 0.9880189467818333
-F1 Score: 0.9921656407386682
+Accuracy: 0.9957
+Precision: 0.9955282280603689
+Recall: 0.9924770130955698
+F1 Score: 0.9940002790567881
 
 Other
-Accuracy: 0.7566
-Precision: 0.6374403684816582
-Recall: 0.9439707673568819
-F1 Score: 0.7609976433621368
+Accuracy: 0.7635
+Precision: 0.6392
+Recall: 0.9732034104750305
+F1 Score: 0.7716079188797682
 
 PANCREATITIS
 Accuracy: N/A
@@ -8234,10 +8267,10 @@ Recall: N/A
 F1 Score: N/A
 
 PNEUMONIA
-Accuracy: 0.9785
-Precision: 0.04580152671755725
-Recall: 0.0625
-F1 Score: 0.05286343612334802
+Accuracy: 0.9803
+Precision: 0.01904761904761905
+Recall: 0.020833333333333332
+F1 Score: 0.019900497512437814
 
 PREMATURITY
 Accuracy: N/A
@@ -8276,10 +8309,10 @@ Recall: N/A
 F1 Score: N/A
 
 SEPSIS
-Accuracy: 0.9634
-Precision: 0.05
-Recall: 0.009615384615384616
-F1 Score: 0.016129032258064516
+Accuracy: N/A
+Precision: N/A
+Recall: N/A
+F1 Score: N/A
 
 SHORTNESS OF BREATH
 Accuracy: N/A
@@ -8294,10 +8327,10 @@ Recall: N/A
 F1 Score: N/A
 
 SUBARACHNOID HEMORRHAGE
-Accuracy: 0.9852
-Precision: 0.03225806451612903
-Recall: 0.04918032786885246
-F1 Score: 0.03896103896103896
+Accuracy: N/A
+Precision: N/A
+Recall: N/A
+F1 Score: N/A
 
 SUBDURAL HEMATOMA
 Accuracy: N/A
@@ -8321,7 +8354,7 @@ F1 Score: N/A
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># For each diagnosis, calculate the number of true positives, false positives, false negatives, and true negatives</span>
@@ -8360,9 +8393,9 @@ F1 Score: N/A
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>ABDOMINAL PAIN
 TP: 0
-FP: 15
+FP: 29
 FN: 46
-TN: 9939
+TN: 9925
 
 ACUTE CORONARY SYNDROME
 TP: 0
@@ -8396,9 +8429,9 @@ TN: 9906
 
 CORONARY ARTERY DISEASE
 TP: 0
-FP: 7
+FP: 0
 FN: 427
-TN: 9566
+TN: 9573
 
 CORONARY ARTERY DISEASE\CATH
 TP: 0
@@ -8438,9 +8471,9 @@ TN: 9993
 
 GASTROINTESTINAL BLEED
 TP: 0
-FP: 26
+FP: 2
 FN: 179
-TN: 9795
+TN: 9819
 
 HEAD BLEED
 TP: 0
@@ -8485,16 +8518,16 @@ FN: 69
 TN: 9931
 
 NEWBORN
-TP: 3546
-FP: 13
-FN: 43
-TN: 6398
+TP: 3562
+FP: 16
+FN: 27
+TN: 6395
 
 Other
-TP: 3875
-FP: 2204
-FN: 230
-TN: 3691
+TP: 3995
+FP: 2255
+FN: 110
+TN: 3640
 
 PANCREATITIS
 TP: 0
@@ -8503,16 +8536,16 @@ FN: 0
 TN: 10000
 
 PNEUMONIA
-TP: 6
-FP: 125
-FN: 90
-TN: 9779
+TP: 2
+FP: 103
+FN: 94
+TN: 9801
 
 PREMATURITY
 TP: 0
-FP: 5
+FP: 1
 FN: 0
-TN: 9995
+TN: 9999
 
 RESPIRATORY DISTRESS
 TP: 0
@@ -8540,15 +8573,15 @@ TN: 9917
 
 SEIZURE
 TP: 0
-FP: 25
+FP: 19
 FN: 0
-TN: 9975
+TN: 9981
 
 SEPSIS
-TP: 3
-FP: 57
-FN: 309
-TN: 9631
+TP: 0
+FP: 11
+FN: 312
+TN: 9677
 
 SHORTNESS OF BREATH
 TP: 0
@@ -8563,10 +8596,10 @@ FN: 0
 TN: 10000
 
 SUBARACHNOID HEMORRHAGE
-TP: 3
-FP: 90
-FN: 58
-TN: 9849
+TP: 0
+FP: 5
+FN: 61
+TN: 9934
 
 SUBDURAL HEMATOMA
 TP: 0
@@ -8590,7 +8623,7 @@ TN: 10000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Export this notebook to HTML</span>
@@ -8609,12 +8642,12 @@ TN: 10000
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>[NbConvertApp] Converting notebook classification.ipynb to html
-[NbConvertApp] Writing 327269 bytes to classification.html
+[NbConvertApp] Writing 334255 bytes to classification.html
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>0</pre>
 </div>
