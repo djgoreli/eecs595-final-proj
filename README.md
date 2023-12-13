@@ -57,7 +57,14 @@ Import the necessary functions from `embedding_utils.py` into other scripts for 
 ### 1. `classification_embeddings.ipynb`
 
 #### Overview
-The main Jupyter Notebook containing the implementation of the diagnosis classification model. This notebook covers data loading, preprocessing, model creation, training, evaluation, and additional tasks such as similarity prediction. The notebook may need to be modified to accept the correct embedding file.
+The main Jupyter Notebook containing the implementation of the diagnosis classification model. This notebook covers data loading, preprocessing, model creation, training, evaluation, and additional tasks such as similarity prediction. The notebook has been modified to accept the correct embedding file.
 
 #### Usage
-Open and run the notebook "classification_embeddings.ipynb" in a Jupyter environment such as Google Collab. Follow the instructions and execute each cell in sequence to train the model and perform evaluations.
+Open and run the notebook "classification_embeddings.ipynb" in a Jupyter environment. Follow the instructions and execute each cell in sequence to train the model and perform evaluations.
+
+#### Outputs
+The `outputs` folder contains HTML outputs of previous runs of the notebook. Opening the HTML in the browser will show the Jupyter Notebook output.
+
+## Requirements
+
+See `requirements.txt` for necessary dependencies to run these files.
