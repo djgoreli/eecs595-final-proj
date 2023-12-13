@@ -12,4 +12,7 @@ building a vocabulary for domain-specific embeddings. It then loads in the word2
 the vast vocabulary of the Google News embeddings with the domain-specific, smaller MIMIC-III training embeddings. The result is a file called _GoogleNews-vectors-finetuned.txt_ containing these embeddings. Note that this 
 implementation relies on local file paths as the pretrained embeddings are too large to be shared over GitHub. 
 
-# Diagnosis Classification
+The _embedding_utils.py_ file contains helper functions useful to preprocessing and converting embedding formats prior to classification. This file is not meant to be run on its own.
+
+# Diagnosis Prediction Model
+
