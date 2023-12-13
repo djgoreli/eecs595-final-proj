@@ -16,3 +16,9 @@ The _embedding_utils.py_ file contains helper functions useful to preprocessing 
 
 # Diagnosis Prediction Model
 
+
+# Requirements
+
+See _requirements.txt_ for requirements necessary to run these files.
+
+
